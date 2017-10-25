@@ -1,12 +1,11 @@
+
 public class Account {
 
-    Checking checking;
-    Saving saving;
-    Invesment invesment;
+    protected String accountType;
+    protected double currentBalance;
 
-    public void checking() {
-
+    protected double deposit(double amount) {
+        this.currentBalance += amount;
+        return  this.currentBalance;
     }
-
-
 }

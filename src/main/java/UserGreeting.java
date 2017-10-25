@@ -1,6 +1,8 @@
 public class UserGreeting {
 
-    public void userGreeting(){
+    Account account = new Account();
+
+    public void userGreeting(String value){
 
         System.out.println("|-------------------------------|");
         System.out.println("|                               |");
@@ -9,8 +11,5 @@ public class UserGreeting {
         System.out.println("|                               |");
         System.out.println("|-------------------------------|");
 
-        System.out.println("Are you a current customer or would like to open a new Account...?");
-
-        System.out.println("Write 'YES for current user or 'NEW for new account...'");
     }
 }

@@ -1,17 +1,18 @@
-
+import java.util.List;
 
 public class User {
 
-    private static long ID;
-    private static long id_next;
     private String name;
     private String gender;
+    private List<Account> account;
 
-    public User(String name, String gender) {
+    public User() {
+    }
+
+    public User(String name, String gender, List<Account> account) {
         this.name = name;
         this.gender = gender;
-
-        ID += id_next;
+        this.account = account;
     }
 
     @Override
@@ -23,8 +24,23 @@ public class User {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getGender() {
         return gender;
     }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public List<Account> getAccount() {
+        return account;
+    }
+
+    public void setAccount(List<Account> account) {
+        this.account = account;
+    }
 }
