@@ -1,23 +1,27 @@
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
     private String name;
-    private String gender;
-    private List<Account> account;
+    private String password;
+    private ArrayList<Account> account;
+    private long accountNumber_next;
+    private long accountNumber;
+    private long userId;
 
-    public User() {
-    }
-
-    public User(String name, String gender, List<Account> account) {
+    public User(String name, long userId) {
         this.name = name;
-        this.gender = gender;
-        this.account = account;
+        this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "name='" + name + '\'' + ", gender='" + gender + '\'' + '}';
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -28,19 +32,25 @@ public class User {
         this.name = name;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public List<Account> getAccount() {
         return account;
     }
 
-    public void setAccount(List<Account> account) {
-        this.account = account;
+    public void setAccount() {
+        account = new ArrayList<> ();
     }
+
+    public long getAccountNumber() {
+        return accountNumber_next;
+    }
+
+
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "name='" + name + '\'' +
+//                ", password='" + password + '\'' +
+//                ", account=" + account +
+//                '}';
+//    }
 }

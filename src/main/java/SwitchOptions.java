@@ -7,39 +7,47 @@ public class SwitchOptions {
     Investment investment = new Investment();
 
 
-    public void userOptions(String value) {
+    public String userOptions(int value) {
         String response = "";
-        int exitCode = 0;
+
         switch (value) {
 
-            case "1":
-                response = "Your current balance is $" + checking.getCurrentBal();
+            case 1:
+                response += checking.getCurrentBalance();
                 break;
 
-            case "2":
-                response = "Your current saving balance is $" + saving.getCurrentBal();
+            case 2:
+                response += saving.getCurrentBalance();
                 break;
 
-            case "3":
+            case 3:
 
-                response = "You have been doing good, you Inverstment went up to $" + investment.getCurrentBal();
+                response += investment.getCurrentBalance();
                 break;
-            case "4":
+            case 4:
 
-                response =   "How much would you like to WITHDRAW...?";
-                exitCode = 4;
+                response = "How much would you like to WITHDRAW...?";
 
                 break;
-            case "5":
-                response = "Where would you like to deposit ...Write 1 for CHECKING OR 2 FOR SAVINGS";
-                exitCode = 5;
+            case 5:
+                response = "How much would you like to deposit...?";
                 break;
+
 
             default:
                 System.out.println("Please type a number between 1 and 5, option no accepted");
         }
-        System.out.println(response);
+        return response;
 
+    }
+
+    public int WithDrawOrDepositOptions(int optionGiven) {
+        if (optionGiven == 4) {
+            // depositMoney();
+        } else if (optionGiven == 5) {
+            //   gettingTheMoney();
+        }
+        return optionGiven;
     }
 
 }

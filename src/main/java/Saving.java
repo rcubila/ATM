@@ -2,23 +2,27 @@ public class Saving extends Account{
 
     public Saving() {
 
-        this(1000);
+        this(0);
     }
 
     public Saving(double initialBalance) {
-
-        this.currentBalance = initialBalance;
-        this.accountType = "Saving";
+        setCurrentBalance (initialBalance);
     }
 
-    public double getCurrentBal(){
-        return this.currentBalance;
+    public double getCurrentBalance() {
+        return getCurrentBalance ();
     }
 
-    public double withdrawFromSavings(double amount){
+    public double depositOnSaving(double amountDeposit) {
+        return getCurrentBalance () + amountDeposit;
+    }
 
-        this.currentBalance -= amount;
-        return this.currentBalance;
+    public double withDrawFromSaving(double amountWithDrawed) {
+        return getCurrentBalance () - amountWithDrawed;
+    }
+
+    public void showSavingBalance() {
+        System.out.println (getCurrentBalance ());
     }
 
 }

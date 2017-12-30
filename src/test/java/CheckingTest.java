@@ -3,29 +3,62 @@ import org.junit.Assert;
 
 public class CheckingTest {
 
-
     @Test
-    public void checkingAccountTest(){
+    public void getCurrentBalanceanceTest(){
         Checking checking = new Checking();
 
-        double expected = 1000.00;
+        double expected = 0;
 
-        double actual = checking.getCurrentBal();
+        double actual = checking.getCurrentBalance();
 
-        Assert.assertEquals("The boolean values are equals", expected, actual, 0);
+        Assert.assertEquals(expected, actual, 0);
     }
 
     @Test
-    public void savingTest(){
-        Saving saving = new Saving();
+    public void depositOnCheckingTest(){
+        Checking checking = new Checking();
 
-        double expected = 3000.00;
 
-        double actual = saving.getCurrentBal();
+        double expected = 40;
+        checking.depositOnChecking(expected);
 
-        Assert.assertEquals("The boolean values are equals", expected, actual, 0);
+        double actual = checking.getCurrentBalance();
+
+        Assert.assertEquals( expected, actual, 0);
     }
 
+
+    @Test
+    public void withDrawFromCheckingTest(){
+        Checking checking = new Checking();
+        double withDrawAmount = 10;
+        double expected = 20;
+        checking.depositOnChecking(30);
+        double actual = checking.withDrawFromChecking(withDrawAmount);
+
+        Assert.assertEquals(expected, actual, 0);
+
+    }
+
+
+    @Test
+    public void gettingTheMoneyTest(){
+        Checking checking = new Checking();
+        double expected = 1000;
+
+
+    }
+
+
+
+    @Test
+    public void setCurrentBalanceAndGetterTest(){
+
+        Checking checking = new Checking();
+        double expected = 0;
+        checking.setCurrentBalance (expected);
+        double actual = checking.getCurrentBalance();
+    }
 
 
 
