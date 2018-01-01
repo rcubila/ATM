@@ -15,7 +15,7 @@ public class UserFactory {
         return users.get(account);
     }
 
-    public ArrayList<User> getUsers() {
+    public ArrayList<User> getAllUsers() {
         return users;
     }
 }

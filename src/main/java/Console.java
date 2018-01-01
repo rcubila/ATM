@@ -190,7 +190,7 @@ public class Console {
 
     private int selectAccount() {
 
-        ArrayList<User> users = userFactory.getUsers();
+        ArrayList<User> users = userFactory.getAllUsers();
 
         if (users.size() <= 0) {
             System.out.println("No users at your userFactory...");

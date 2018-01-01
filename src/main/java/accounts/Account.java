@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Account {
 
-    private static UUID uuid;
+    private UUID uuid;
     private double balance = 0;
 
     public Account() {
